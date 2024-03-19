@@ -1,0 +1,60 @@
+.container {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  color: #333;
+  font-size: 2em;
+}
+
+.button {
+  background: #007aff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background: #0056b3;
+}
+
+.postTitle {
+  color: #333;
+  font-size: 1.5em;
+}
+
+.postContent {
+  color: #666;
+  line-height: 1.6;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); color: #3498db; }
+  25% { color: #9b59b6; }
+  50% { color: #e74c3c; }
+  75% { color: #f1c40f; }
+  100% { transform: rotate(360deg); color: #2ecc71; }
+}
+
+.loader {
+  border: 8px solid #f3f3f3; /* Make the spinner smaller */
+  border-radius: 50%;
+  border-top: 8px solid #3498db;
+  width: 60px; /* Half of the original size */
+  height: 60px; /* Half of the original size */
+  animation: spin 2s linear infinite;
+
+  /* Center the spinner */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
