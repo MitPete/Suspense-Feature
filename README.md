@@ -1,17 +1,14 @@
-## Running React on Repl.it
+# React Suspense Demo
 
-[React](https://reactjs.org/) is a popular JavaScript library for building user interfaces.
+This project demonstrates how to use React Suspense to handle data fetching. It simulates fetching posts and comments data with artificial delay and displays them in a user-friendly way.
 
-[Vite](https://vitejs.dev/) is a blazing fast frontend build tool that includes features like Hot Module Reloading (HMR), optimized builds, and TypeScript support out of the box.
+## Project Structure
 
-Using the two in conjunction is one of the fastest ways to build a web app.
+The main component is `App`, which maintains the state for the current post ID and resources for fetching the post and its comments. It uses React Suspense and an Error Boundary to handle loading and error states.
 
-### Getting Started
-- Hit run
-- Edit [App.jsx](#src/App.jsx) and watch it live update!
+The `Post` and `Comments` components are responsible for displaying the post and comments data. They read from the resources passed in props, which may throw a promise (if the data is still loading) or an error.
 
-By default, Replit runs the `dev` script, but you can configure it by changing the `run` field in the [configuration file](#.replit). Here are the vite docs for [serving production websites](https://vitejs.dev/guide/build.html)
+The `fetchPost` and `fetchComments` functions simulate fetching data from an API. They return promises that resolve after a delay.
 
-### Typescript
+The `createResource` function creates a resource object with a `read` method. This method throws the promise if the data is still loading, throws the error if the fetch failed, or returns the data if it's available.
 
-Just rename any file from `.jsx` to `.tsx`. You can also try our [TypeScript Template](https://replit.com/@replit/React-TypeScript)
